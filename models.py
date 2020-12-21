@@ -20,7 +20,7 @@ class Rank(models.Model):
 
 class Eligibility (models.Model):
     summary     = models.CharField(max_length = 20)
-    position    = models.IntegerField(max_length = 20)
+    position    = models.IntegerField()
     desc        = models.TextField(blank = True)
     rank        = models.ForeignKey(Rank, on_delete=models.SET_NULL, null=True)
 
@@ -32,7 +32,7 @@ class Category (models.Model):
     name        = models.CharField(max_length = 20)
     position    = models.IntegerField()
 
-    def __str__ (models.Model):
+    def __str__ (self):
         return self.name
     
     @property
