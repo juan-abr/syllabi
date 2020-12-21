@@ -1,0 +1,15 @@
+{% extends 'base_header.html'%}
+
+{% block side_bar %}
+    <aside id="rightsidebar">
+        <nav id="nav">
+            <ul>
+                {% block side_bar_content %}
+                    <li>Menu 1</li>
+                    <li>Menu 2</li>
+                    <li>Menu 3</li>
+                {% endblock side_bar_content %}
+            </ul>
+        </nav>
+    </aside>
+{% endblock side_bar %}

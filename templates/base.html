@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf=8">
+        <title>
+            {% block title %}
+            {{ page_title|default:"Untitled Page" }}
+            {% endblock title %} - Central Maryland Martial Arts
+        </title>
+    </head>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+
+    <body>
+        <div id="wrapper">
+            {% block header %}{% endblock header %}
+            
+            {% block side_bar %}{% endblock side_bar %}
+
+            <div id="main">
+                {% block content %}
+                {% endblock content %}
+            </div>
+
+            <footer id="footer">
+                <!-- Created &copy
+                <script type="text/JavaScript">
+                    document.write(new Date().getFullYear());
+                </script> by Juan Rodriguez -->
+
+                For website support or feedback, contact Juan Rodriguez at juanabarro@protonmail.com.
+            </footer>
+        </div>
+    </body>
+</html>

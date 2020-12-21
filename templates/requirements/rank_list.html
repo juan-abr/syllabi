@@ -1,0 +1,11 @@
+{% extends 'base_requirements.html' %}
+
+{% block title %}Requirements{% endblock title %}
+
+{% block req_header %}<h1>Requirements</p></h1>{% endblock req_header %}
+
+{% block req_content %}
+    {% for object in object_list %}
+        <p id="ranks"><a href="/requirements/rank/{{ object.id }}">{{ object }}</a><br><br></p>
+    {% endfor %}
+{% endblock req_content %}

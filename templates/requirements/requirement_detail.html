@@ -1,0 +1,21 @@
+{% extends 'base_requirements.html' %}
+{% load static %}
+
+{% block title %}{{ object }}{% endblock title %}
+
+{% block req_header %}
+    <h1>{{ object.title }}</h1>
+    {% comment %}{{ object.desc }}{% endcomment %}
+{% endblock req_header %}
+
+{% block req_content %}
+    Content exists here, but only in spirit. Apologies.
+    {% for media in requirement.media %}
+        {% if ".mp4" in media.file_name %}
+            <video controls src="{% static media.file_name %}" width="600" height="400"></video><br>
+        {% endif %}
+        {% if ".jpg" in media.file_name %}
+            <img src="{% static media.file_name %}" alt="{{ media.requirement }} {{ media.file_name }}" width="600" height="400"><br>
+        {% endif %}
+    {% endfor %}
+{% endblock req_content %}

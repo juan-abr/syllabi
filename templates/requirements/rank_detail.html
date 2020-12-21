@@ -1,0 +1,34 @@
+{% extends 'base_requirements.html' %}
+
+{% block title %}{{ object }}{% endblock title %}
+
+{% block req_history %}
+    <!-- <div id="links">
+        <a href="/requirements/rank/{{ rank.id }}">{{ object }}</a>
+    </div> -->
+{% endblock req_history %}
+
+{% block req_header %}
+    <h1>{{ object.degree }} {{ object }}</h1>
+    <p id="eligibility">{{ object.eligibility }}</p>
+{% endblock req_header %}
+
+<br><br>
+
+{% block req_content %}
+    {% comment %}
+        The following for-loops should list each category in a Rank,
+        and then each requirement under that specific rank's category.
+    {% endcomment %}
+
+    {% for category in object.categories %}
+        <br><!--a href="{{ category.id }}"--><b>{{ category.name }}:</b><!--/a-->
+
+        {% for requirement in category.requirements %}
+            <br><a {% comment %} href="/requirements/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}" {% endcomment %}>
+                    {{ requirement.title }}
+                </a>
+        {% endfor %}
+        <br>
+    {% endfor %}
+{% endblock req_content %}
