@@ -46,6 +46,9 @@ class Requirement (models.Model):
     rank        = models.ForeignKey(Rank, on_delete=models.SET_NULL, null=True)
     category    = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
 
+    def __str__(self):
+        return self.name
+
     @property
     def media(self):
         return self.media_set.all().order_by('position')
