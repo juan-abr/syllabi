@@ -1,0 +1,22 @@
+{% comment %}
+
+{% extends base_requirements.html %}
+
+{% block content %}
+    {% block title %}All Categories{% endblock title %}
+
+    {% req_header %}All Categories{% req_header %}
+
+    {% req_content %}
+        {{ object }}
+        {% for object in object.categories %}
+            {{ object }}
+            {% for requirement in object.requirements %}
+            {% endfor %}
+        {% endfor %}
+    {% req_content %}
+
+
+{% endblock content %}
+
+{% endcomment %}

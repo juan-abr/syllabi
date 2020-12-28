@@ -21,7 +21,7 @@
         and then each requirement under that specific rank's category.
     {% endcomment %}
 
-    {% for category in object.categories %}
+    {% for category.name in Category %}
         <br><!--a href="{{ category.id }}"--><b>{{ category.name }}:</b><!--/a-->
 
         {% for requirement in category.requirements %}
