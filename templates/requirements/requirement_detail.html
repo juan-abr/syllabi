@@ -9,7 +9,7 @@
 {% endblock req_header %}
 
 {% block req_content %}
-    Content exists here, but only in spirit. Apologies.
+    <!-- Content exists here, but only in spirit. Apologies. -->
     {% for media in requirement.media %}
         {% if ".mp4" in media.file_name %}
             <video controls src="{% static media.file_name %}" width="600" height="400"></video><br>
