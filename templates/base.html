@@ -29,11 +29,12 @@
                 <div id="topbanner">{% comment %}<img src="{% static 'top_banner.jpg' %}" alt="" />{% endcomment %}</div>
             </header>
             
+
             {% block side_bar %}{% endblock side_bar %}
 
             <div id="main">
-                {% block content %}
-                {% endblock content %}
+                {% block submenu %}{% endblock submenu %}
+                {% block content %}{% endblock content %}
             </div>
 
             <footer id="footer">
