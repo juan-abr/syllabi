@@ -13,9 +13,14 @@ class RankDetailView(DetailView):
     model = Rank
     pk_url_kwarg = 'rank_id'
 
+
+class CategoryListView(ListView):
+    model = Category
+
 class CategoryDetailView(DetailView):
     model = Category
     pk_url_kwarg = 'category_id'
+
 
 class RequirementDetailView(LoginRequiredMixin, DetailView):
     model = Requirement

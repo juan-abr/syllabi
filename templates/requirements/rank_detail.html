@@ -21,11 +21,11 @@
         and then each requirement under that specific rank's category.
     {% endcomment %}
 
-    {% for category.name in Category %}
-        <br><!--a href="{{ category.id }}"--><b>{{ category.name }}:</b><!--/a-->
+    {% for category in category.categories %}
+        <br><a href="requirements/rank/all/category/{{ category.id }}"><b>{{ category.name }}:</b><!--/a-->
 
         {% for requirement in category.requirements %}
-            <br><a {% comment %} href="/requirements/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}" {% endcomment %}>
+            <br><a href="/requirements/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">
                     {{ requirement.title }}
                 </a>
         {% endfor %}
