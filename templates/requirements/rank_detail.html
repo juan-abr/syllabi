@@ -2,15 +2,18 @@
 
 {% block title %}{{ object }}{% endblock title %}
 
-{% block req_history %}
+{% comment %}{% block req_history %}
     <!-- <div id="links">
         <a href="/requirements/rank/{{ rank.id }}">{{ object }}</a>
     </div> -->
-{% endblock req_history %}
+{% endblock req_history %}{% endcomment %}
 
 {% block req_header %}
     <h1>{{ object.degree }} {{ object }}</h1>
-    <p id="eligibility">{{ object.eligibility }}</p>
+    <p id="eligibility">
+        {% for eligibility in object.eligibility %}
+        {% endfor %}
+    </p>
 {% endblock req_header %}
 
 <br><br>
@@ -21,14 +24,15 @@
         and then each requirement under that specific rank's category.
     {% endcomment %}
 
-    {% for category in category.categories %}
-        <br><a href="requirements/rank/all/category/{{ category.id }}"><b>{{ category.name }}:</b><!--/a-->
-
-        {% for requirement in category.requirements %}
-            <br><a href="/requirements/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">
-                    {{ requirement.title }}
-                </a>
-        {% endfor %}
-        <br>
+    {% for category in category.objects.all %}
+        <br><a href="requirements/rank/all/category/{{ category.id }}"><b>{{ category.name }}:</b></a>
     {% endfor %}
+
+    {% for requirement in object.requirements %}
+        {{ requirement.category }}:
+        <br><a href="/requirements/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">
+                {{ requirement.name }}
+            </a>
+    {% endfor %}
+    <br>
 {% endblock req_content %}

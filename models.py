@@ -14,9 +14,9 @@ class Rank(models.Model):
     def eligibility(self):
         return self.eligibility_set.all().order_by('position')
 
-    # @property
-    # def requirements(self):
-    #     return self.requirement_set.all().order_by('position')
+    @property
+    def requirements(self):
+        return self.requirement_set.all().order_by('position')
 
 class Eligibility (models.Model):
     summary     = models.CharField(max_length = 20)
@@ -34,10 +34,6 @@ class Category (models.Model):
 
     def __str__ (self):
         return self.name
-
-    @property
-    def categories(self):
-        return self.Category.objects.all()
     
     @property
     def requirements(self):
@@ -59,9 +55,13 @@ class Requirement (models.Model):
     def media(self):
         return self.media_set.all().order_by('position')
 
+    # @property
+    # def requirements(self):
+    #     return self.Requirement.objects.all()
+
     @property
-    def requirements(self):
-        return self.Requirement.objects.all()
+    def categories(self):
+        return self.category_set.all()
 
 class Media (models.Model):
     file_name   = models.CharField(max_length = 20)
