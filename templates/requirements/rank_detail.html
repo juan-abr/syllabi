@@ -19,17 +19,12 @@
 <br><br>
 
 {% block req_content %}
-    {% comment %}
-        The following for-loops should list each category in a Rank,
-        and then each requirement under that specific rank's category.
-    {% endcomment %}
-
-    {% for category in category.objects.all %}
-        <br><a href="requirements/rank/all/category/{{ category.id }}"><b>{{ category.name }}:</b></a>
-    {% endfor %}
-
     {% for requirement in object.requirements %}
-        {{ requirement.category }}:
+        {% if requirement.position == 1 %}
+            <br><a{# href="requirements/rank/all/category/{{ requirement.category }}"#}>
+                    <b>{{ requirement.category }}:</b>
+                </a>
+        {% endif %}
         <br><a href="/requirements/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">
                 {{ requirement.name }}
             </a>

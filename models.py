@@ -46,8 +46,6 @@ class Requirement (models.Model):
     rank        = models.ForeignKey(Rank, on_delete=models.SET_NULL, null=True)
     category    = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
 
-    # requirements = self.Requirement.objects.all()
-
     def __str__(self):
         return self.name
 
@@ -55,13 +53,9 @@ class Requirement (models.Model):
     def media(self):
         return self.media_set.all().order_by('position')
 
-    # @property
-    # def requirements(self):
-    #     return self.Requirement.objects.all()
-
     @property
     def categories(self):
-        return self.category_set.all()
+        return self.category_set.all().order_by('position')
 
 class Media (models.Model):
     file_name   = models.CharField(max_length = 20)
