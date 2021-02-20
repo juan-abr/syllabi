@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator
 
 # Create your models here.
 class Rank(models.Model):
@@ -16,7 +17,7 @@ class Rank(models.Model):
 
     @property
     def requirements(self):
-        return self.requirement_set.all().order_by('position')
+        return self.requirement_set.all().order_by('category', 'position')
 
 class Eligibility (models.Model):
     summary     = models.CharField(max_length = 20)
@@ -42,7 +43,10 @@ class Category (models.Model):
 class Requirement (models.Model):
     slug        = models.SlugField(blank = True)
     name        = models.CharField(max_length = 100)
-    position    = models.IntegerField()
+    position    = models.IntegerField(
+                    # unique = True,
+                    validators = [MinValueValidator(1)],
+                )
     rank        = models.ForeignKey(Rank, on_delete=models.SET_NULL, null=True)
     category    = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
 
@@ -53,9 +57,9 @@ class Requirement (models.Model):
     def media(self):
         return self.media_set.all().order_by('position')
 
-    @property
-    def categories(self):
-        return self.category_set.all().order_by('position')
+    # @property
+    # def categories(self):
+    #     return self.category_set.all().order_by('position')
 
 class Media (models.Model):
     file_name   = models.CharField(max_length = 20)

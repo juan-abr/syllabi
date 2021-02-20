@@ -19,13 +19,16 @@
 <br><br>
 
 {% block req_content %}
-    {% for category in requirement.categories %}
-        <br><a{# href="requirements/rank/all/category/{{ requirement.category }}"#}>
-                <b>{{ requirement.category }}:</b>
-            </a>
+    <br>
+    {% for requirement in object.requirements %}
+        {% if requirement.position == 1 %}
+            <br><br>
+            <b><a href="requirements/rank/all/category/{{ requirement.category }}">
+                {{ requirement.category }}:
+            </a></b>
+        {% endif %}
         <br><a href="/requirements/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">
-                {{ requirement.name }}
+            {{ requirement.name }}
             </a>
     {% endfor %}
-    <br>
 {% endblock req_content %}
