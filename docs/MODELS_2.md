@@ -46,6 +46,10 @@ Schedule page
 - Order Forms
   - Uniforms, gear, weapons, etc.
 
+Signup Page
+- website needs a signup page
+- (i.e. for breaking presentations, exams, events)
+
 Gallery
 - Pictures through the ages.
 
