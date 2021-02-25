@@ -23,11 +23,11 @@
     {% for requirement in object.requirements %}
         {% if requirement.position == 1 %}
             <br><br>
-            <b><a href="requirements/rank/all/category/{{ requirement.category }}">
+            <b><a href="syllabi/rank/all/category/{{ requirement.category }}">
                 {{ requirement.category }}:
             </a></b>
         {% endif %}
-        <br><a href="/requirements/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">
+        <br><a href="/syllabi/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">
             {{ requirement.name }}
             </a>
     {% endfor %}
