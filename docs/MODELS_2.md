@@ -53,10 +53,10 @@ Gallery
 - Pictures through the ages.
 
 FIMAP
-- Get in touch with Dillon
+- Get in touch with FIMAP Instructor
 
 Tai Chi
-- Talk to Anna
+- Talk to Tai Chi Instructor
 
 Online Payments
 
