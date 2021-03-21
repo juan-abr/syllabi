@@ -38,7 +38,7 @@ Home page
 - location
 - mission statement
 
-Schedule page
+Schedule page (Announcements web app)
 - class times
 - email notifications
 - newsletter?
