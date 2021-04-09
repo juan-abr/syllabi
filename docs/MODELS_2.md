@@ -45,9 +45,10 @@ Schedule page (Announcements web app)
 - Signup for events (Exams, Tournaments, etc.)
 - Order Forms
   - Uniforms, gear, weapons, etc.
-Signup Page
-- website needs a signup page
-- (i.e. for breaking presentations, exams, events)
+- Signup Page
+- - website needs a signup page
+- - (i.e. for breaking presentations, exams, events)
+- PDF, etc. support
 
 Gallery
 - Pictures through the ages.
