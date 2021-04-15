@@ -1,4 +1,5 @@
 {% extends 'base_requirements.html' %}
+{% load custom_template_tags %}
 
 {% block title %}{{ object }}{% endblock title %}
 
@@ -29,6 +30,6 @@
         {% endif %}
         <br><a href="/syllabi/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">
             {{ requirement.name }}
-            </a>
+        </a>
     {% endfor %}
 {% endblock req_content %}
