@@ -4,9 +4,9 @@
 {% block title %}{{ object }}{% endblock title %}
 
 {% comment %}{% block req_history %}
-    <!-- <div id="links">
+    <div id="links">
         <a href="/requirements/rank/{{ rank.id }}">{{ object }}</a>
-    </div> -->
+    </div>
 {% endblock req_history %}{% endcomment %}
 
 {% block req_header %}
@@ -22,14 +22,15 @@
 {% block req_content %}
     <br>
     {% for requirement in object.requirements %}
-        {% if requirement.position == 1 %}
+        {% if requirement.category != action %}
             <br><br>
-            <b><a href="syllabi/rank/all/category/{{ requirement.category }}">
+            <b><a href="/syllabi/rank/all/category/{{ requirement.category.id }}">
                 {{ requirement.category }}:
             </a></b>
         {% endif %}
-        <br><a href="/syllabi/rank/{{ rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">
+        <br><a href="/syllabi/rank/{{ rank.id }}/category/{{ requirement.category.id }}/requirement/{{ requirement.id }}">
             {{ requirement.name }}
         </a>
+        {% setvar requirement.category as action %}
     {% endfor %}
 {% endblock req_content %}

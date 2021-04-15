@@ -1,11 +1,11 @@
 {% extends 'base_requirements.html' %}
 
-{% block title %}All Categories{% endblock title %}
+{% block title %}{{ object }}{% endblock title %}
 
 {% block req_header %}<h1>{{ object }}</h1>{% endblock req_header %}
 
 {% block req_content %}
     {% for requirement in object.requirements %}
-        {{ requirement.name }}<br>
+        <a href="/syllabi/rank/{{ requirement.rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">{{ requirement.name }}</a><br>
     {% endfor %}
 {% endblock req_content %}

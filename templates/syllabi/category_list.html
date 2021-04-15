@@ -6,6 +6,6 @@
 
 {% block req_content %}
     {% for object in object_list %}
-    <p id="categories"><a href="/syllabi/rank/all/category/{{ object.id }}">{{ object }}</a><br></p>
+        <p id="categories"><a href="/syllabi/rank/all/category/{{ object.id }}">{{ object }}</a><br></p>
     {% endfor %}
 {% endblock req_content %}

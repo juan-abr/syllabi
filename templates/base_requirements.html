@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
+{% block submenu %}
+    <a href="/syllabi/">Ranks</a> | 
+    <a href="/syllabi/rank/all">Categories</a>
+{% endblock submenu %}
+
 {% block content %}
-
-    {% block req_history %}
-    {% endblock req_history %}
-
     {% block req_header %}
     {% endblock req_header %}
-
 
     {% block req_content %}
         <p>This requirement has no video or image description.</p>
