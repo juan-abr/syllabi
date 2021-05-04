@@ -4,8 +4,8 @@
 {% block title %}{{ object }}{% endblock title %}
 
 {% block req_header %}
-    <h1>{{ object.title }}</h1>
-    {% comment %}{{ object.desc }}{% endcomment %}
+    <h1>{{ object }}</h1>
+    {{ object.desc }}
 {% endblock req_header %}
 
 {% block req_content %}
