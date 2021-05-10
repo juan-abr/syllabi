@@ -6,6 +6,7 @@
 
 {% block req_content %}
     {% for requirement in object.requirements %}
-        <a href="/syllabi/rank/{{ requirement.rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">{{ requirement.name }}</a><br>
+        {#<a href="/syllabi/rank/{{ requirement.rank.id }}/category/{{ category.id }}/requirement/{{ requirement.id }}">{{ requirement.name }}</a><br>#}
+        <a href="/syllabi/{{ requirement.rank.slug }}/{{ category.slug }}/{{ requirement.slug }}">{{ requirement.name }}</a><br>
     {% endfor %}
 {% endblock req_content %}
