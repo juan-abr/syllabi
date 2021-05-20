@@ -1,14 +1,6 @@
 {% extends 'base_requirements.html' %}
 {% load custom_template_tags %}
 
-{% block title %}{{ object }}{% endblock title %}
-
-{% comment %}{% block req_history %}
-    <div id="links">
-        <a href="/requirements/rank/{{ rank.id }}">{{ object }}</a>
-    </div>
-{% endblock req_history %}{% endcomment %}
-
 {% block req_header %}
     <h1>{{ object.degree }} {{ object }}</h1>
     <p id="eligibility">
@@ -24,11 +16,11 @@
     {% for requirement in object.requirements %}
         {% if requirement.category != action %}
             <br><br>
-            <b><a href="/syllabi/rank/all/category/{{ requirement.category.id }}">
-                {{ requirement.category }}:
+            <b><a href="/syllabi/categories/{{ requirement.category.slug }}/">
+                    {{ requirement.category }}:
             </a></b>
         {% endif %}
-        <br><a href="/syllabi/rank/{{ rank.id }}/category/{{ requirement.category.id }}/requirement/{{ requirement.id }}">
+        <br><a href="/syllabi/{{ rank.slug }}/{{ requirement.category.slug }}/{{ requirement.slug }}">
             {{ requirement.name }}
         </a>
         {% setvar requirement.category as action %}

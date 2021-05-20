@@ -1,12 +1,15 @@
 {% extends 'base_requirements.html' %}
 
-{% block title %}All Categories{% endblock title %}
+{% block title %}All Categories - {% endblock title %}
+
+{% block og_title %}All Categories - {% endblock og_title %}
+{% block description %}{% endblock description %}
+{% block twitter_card %}{% endblock twitter_card %}
 
 {% block req_header %}<h1>All Categories</h1>{% endblock req_header %}
 
 {% block req_content %}
     {% for object in object_list %}
-        {#<p id="categories"><a href="/syllabi/rank/all/category/{{ object.id }}">{{ object }}</a><br></p>#}
         <p id="categories"><a href="/syllabi/categories/{{ object.slug }}">{{ object }}</a><br><br></p>
     {% endfor %}
 {% endblock req_content %}

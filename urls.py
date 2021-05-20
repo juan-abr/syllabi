@@ -13,6 +13,6 @@ urlpatterns = [
     # path('rank/all/category/<int:category_id>/', CategoryDetailView.as_view(), name = 'category_detail_view'),
 
     path('<slug>/', RankDetailView.as_view(), name = 'rank_detail_view'),
-    path('<rank_slug>/<category_slug>/<requirement_slug/', RequirementDetailView.as_view(), name = 'requirement_detail_view'),
+    path('<rank_slug>/<category_slug>/<slug>/', RequirementDetailView.as_view(), name = 'requirement_detail_view'),
     path('categories/<slug>/', CategoryDetailView.as_view(), name = 'category_detail_view'),
 ]
