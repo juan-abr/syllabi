@@ -16,7 +16,7 @@
     {% for requirement in object.requirements %}
         {% if requirement.category != action %}
             <br><br>
-            <b><a href="/syllabi/categories/{{ requirement.category.slug }}/">
+            <b><a href="{{ requirement.category.get_absolute_url }}">
                     {{ requirement.category }}:
             </a></b>
         {% endif %}

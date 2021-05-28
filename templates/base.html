@@ -5,15 +5,17 @@
     <head>
         <meta charset="utf=8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Juan R">
 
         <title>{% block title %}{{ object }} - {% endblock title %}Central Maryland Martial Arts</title>
 
         {#% if object.slug in request.path %#}
             <meta property="og:title" content="{% block og_title %}{{ object }} - {% endblock og_title %}Central Maryland Martial Arts">
             <meta name="description" property="og:description" content="{% block description %}{{ object.desc }}{#|striptags|truncatewords:20 }#}{% endblock description %}">
+            {# Don't worry about meta keywords. Doesn't impact SEO #}
             <meta property="og:image" content="{% static 'logo.png' %}">
             <meta property="og:image:alt" content="">
-            {#<meta property="og:url" content="{% url %}">#}
+            <meta property="og:url" content="{% block og_url %}{% endblock og_url %}">
             <meta name="twitter:card" value="{% block twitter_card %}{{ object.desc }}{#|striptags|truncatewords:20 }#}{% endblock twitter_card %}">
         {% block meta %}{% endblock meta %}
     </head>

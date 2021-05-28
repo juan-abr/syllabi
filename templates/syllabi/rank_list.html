@@ -3,13 +3,14 @@
 {% block title %}Curriculum - {% endblock title %}
 
 {% block og_title %}Curriculum - {% endblock og_title %}
-{% block description %}{% endblock description %}
-{% block twitter_card %}{% endblock twitter_card %}
+{% block description %}The current Tang Soo Do curriculum as taught by Central Maryland Martial Arts{% endblock description %}
+{% block og_url %}{% endblock og_url %}
+{% block twitter_card %}The current Tang Soo Do curriculum as taught by Central Maryland Martial Arts{% endblock twitter_card %}
 
 {% block req_header %}<h1>Curriculum</h1>{% endblock req_header %}
 
 {% block req_content %}
     {% for object in object_list %}
-        <p id="ranks"><a href="/syllabi/{{ object.slug }}">{{ object }}</a><br><br></p>
+        <p id="ranks"><a href="{{ object.get_absolute_url }}">{{ object }}</a><br><br></p>
     {% endfor %}
 {% endblock req_content %}

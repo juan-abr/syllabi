@@ -3,13 +3,14 @@
 {% block title %}All Categories - {% endblock title %}
 
 {% block og_title %}All Categories - {% endblock og_title %}
-{% block description %}{% endblock description %}
-{% block twitter_card %}{% endblock twitter_card %}
+{% block description %}All categories of requirements needed to rank up at all levels.{% endblock description %}
+{% block og_url %}{% endblock og_url %}
+{% block twitter_card %}All categories of requirements needed to rank up at all levels.{% endblock twitter_card %}
 
 {% block req_header %}<h1>All Categories</h1>{% endblock req_header %}
 
 {% block req_content %}
     {% for object in object_list %}
-        <p id="categories"><a href="/syllabi/categories/{{ object.slug }}">{{ object }}</a><br><br></p>
+        <p id="categories"><a href="{{ object.get_absolute_url }}">{{ object }}</a><br><br></p>
     {% endfor %}
 {% endblock req_content %}

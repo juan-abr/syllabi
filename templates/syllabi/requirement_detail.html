@@ -1,13 +1,14 @@
 {% extends 'base_requirements.html' %}
 {% load static %}
 
+{% block og_url %}syllabi/{{ object.rank.slug }}/{{ object.category.slug }}/{{ object.slug }}{% endblock og_url %}
+
 {% block req_header %}
     <h1>{{ object }}</h1>
     {{ object.desc }}
 {% endblock req_header %}
 
 {% block req_content %}
-    <!-- Content exists here, but only in spirit. Apologies. -->
     {% for media in requirement.media %}
         {% if ".mp4" in media.file_name %}
             <video controls src="{% static media.file_name %}" width="600" height="400"></video><br>
