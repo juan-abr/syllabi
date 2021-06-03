@@ -1,3 +1,5 @@
+{# base template should remain under the syllabi app for the time being. In the future, it may be moved. #}
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -15,7 +17,7 @@
             {# Don't worry about meta keywords. Doesn't impact SEO #}
             <meta property="og:image" content="{% static 'logo.png' %}">
             <meta property="og:image:alt" content="">
-            <meta property="og:url" content="{% block og_url %}{% endblock og_url %}">
+            <meta property="og:url" content="{% block og_url %}{{ object.get_absolute_url }}{% endblock og_url %}">
             <meta name="twitter:card" value="{% block twitter_card %}{{ object.desc }}{#|striptags|truncatewords:20 }#}{% endblock twitter_card %}">
         {% block meta %}{% endblock meta %}
     </head>

@@ -78,7 +78,9 @@ class Requirement (models.Model):
     position    = models.IntegerField(validators = [MinValueValidator(1)],)
     rank        = models.ForeignKey(Rank, on_delete=models.SET_NULL, null=True)
     category    = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
-    desc        = models.TextField(blank=True)
+    desc        = models.TextField(
+        help_text="IMPORTANT: Google will use this as a preview snippet in the results of search. A description should be 1-2 sentences long preferably.",
+        blank=True)
     slug        = models.SlugField(
         help_text="This field should not be changed unless you KNOW what you are doing. I'm NOT kidding.",
         unique = True
