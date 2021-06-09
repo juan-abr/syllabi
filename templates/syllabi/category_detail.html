@@ -1,6 +1,9 @@
 {% extends 'base_requirements.html' %}
 
-{% block req_header %}<h1>{{ object }}</h1>{% endblock req_header %}
+{% block req_header %}
+    <h1>{{ object }}</h1>
+    {{ object.desc }}
+{% endblock req_header %}
 
 {% block req_content %}
     {% for requirement in object.requirements %}
