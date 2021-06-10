@@ -2,11 +2,11 @@
 
 {% block req_header %}
     <h1>{{ object }}</h1>
-    {{ object.desc }}
+    <p>{{ object.desc }}</p>
 {% endblock req_header %}
 
 {% block req_content %}
     {% for requirement in object.requirements %}
-        <a href="/syllabi/{{ requirement.rank.slug }}/{{ category.slug }}/{{ requirement.slug }}">{{ requirement.name }}</a><br>
+        <a href="/syllabi/{{ requirement.rank.slug }}/{{ category.slug }}/{{ requirement.slug }}">{{ requirement.name }}</a><br><br>
     {% endfor %}
 {% endblock req_content %}
