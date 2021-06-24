@@ -5,6 +5,11 @@ A Django web app that organizes the requirements of a martial arts school by
 rank and category, and then generates webpages that displays those requirements
 as an individual syllabus for each of the school's ranks.
 
+## Features
+Create a syllabus for each rank in your school's curriculum (i.e. Yellow Belt to Black Belt)
+Upload videos of techniques or combinations for your students.
+Secure descriptive information regarding techniques or combinations behind Django's authentication system.
+
 ## Installation
 If you already have a Django project up and running, all you need is to:
 1. add the repo to your project folder,
